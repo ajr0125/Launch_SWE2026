@@ -95,8 +95,15 @@ const newArr = attendance.map(student => ({
 }));
 
 
-/* Hardest Challenge */
+/* Hardest Challenge (Don't do this without completing harder challenges) */
 
+/* Write a function that solves the "every number eventually equals 4" puzzle. The output should be
+    an array of the path you took to make it equal four
+    ex/ [11, 6, 3, 5, 4], [19, 8, 5, 4] or [252, 18, 8, 5, 4]
+    For context: https://puzzling.stackexchange.com/questions/29137/every-number-eventually-equals-4 */
+
+// assuming num < 1,000,000. Pattern holds with higher numbers but just requires more checks
+// does not support leading zeros
 const numberToWordsLength = (num) => {
   const words = {
     0: "zero", 1: "one", 2: "two", 3: "three", 4: "four",
