@@ -10,62 +10,67 @@ const bookList = [
 /* Do all of these using proper ES6 syntax
 Using the following array of objects,
 */
+
 // (1) Write an arrow function that adds a new entry to bookList
 const addBook = (newTitle, newAuthor) => {
-      //your code here
+  // your code here
 };
+
 // (2) Write an arrow function that removes a specific book from the bookList
 const removeBook = (removeTitle, removeAuthor) => {
-      //your code here
+  // your code here
 };
 
-// (3) Write an arrow function that lists out all the books or all the authors in the book list */
+// (3) Write an arrow function that prints all book titles using .forEach()
 const printBooks = () => {
-      //your code here
+  // your code here
 };
 
-/*
+
 /* Intermediate Challenge */
 
-/* (4) Write a one-line arrow function that takes in a number and returns a string stating whether the
-  number is positive or negative using a ternary operator (assume the number will never be zero) */
+// (4) Write a one-line arrow function that takes in a number and returns
+// whether the number is positive or negative using a ternary operator
+const numberSign = (n) => null;//  remove null type and add your code here
 
-const numberSign = () =>  //your code here
 
-/* (5) Write a switch statement for a 'day' variable that prints out something based off of what day of
-  the week it is i.e. if it's Monday, print "good luck" or wednesday print "hump day" or friday print "party" */
+/* (5) Write a switch statement for a 'day' variable that prints something
+based off of what day of the week it is */
 
 let day = "Monday";
+
 switch(day){
-     //your code here
+
 }
 
-/* (6) Write an arrow function that takes in a number, and uses a for loop to return the sum of every
-  number from 1 up to that number
-  ex. sumUp(7) = 28 */
+
+/* (6) Write an arrow function that takes in a number and returns the sum
+of every number from 1 up to that number */
 
 const sumUp = (n) => {
-        //your code here
-}
+  // your code here
+};
+
 
 /* Harder Challenge */
 
-/* (7) Write an arrow function that converts the temperature from Celsius to Fahrenheit and then tells
-    me what I should wear accordingly */
+// (7) Convert Celsius to Fahrenheit and return clothing advice
 
 const temperature = (celsius) => {
-    //your code here
+  // your code here
 };
 
-/* (8) Write a function that takes in an array and prints out the amount of truthy values in that array
-  using .forEach() */
+
+/* (8) Print the amount of truthy values in an array using .forEach() */
 
 const truthy = (arr) => {
-    //your code here
-}
+  // your code here
+};
 
-/* (9) Using the map function and arrow syntax, return an array of object that contain a fullName field
-  and an averageGrade field representing the letter grade that corresponds to their GPA */
+
+/* (9) Using map(), return an array of objects that contain:
+   - fullName
+   - averageGrade */
 
 const attendance = [
   { firstName: "Clay", lastName: "Tondreau", gpa: 4.0 },
@@ -76,25 +81,22 @@ const attendance = [
   { firstName: "Jackson", lastName: "Wolf", gpa: 4.0 },
   { firstName: "Jared", lastName: "Nguyen", gpa: 4.0 },
 ];
+
 const gpaToLetter = (gpa) => {
-    if (gpa >= 3.7) return "A";
-    if (gpa >= 3.0) return "B";
-    if (gpa >= 2.0) return "C";
-    if (gpa >= 1.0) return "D";
-    return "F";
-}
+  if (gpa >= 3.7) return "A";
+  if (gpa >= 3.0) return "B";
+  if (gpa >= 2.0) return "C";
+  if (gpa >= 1.0) return "D";
+  return "F";
+};
+
 const newArr = attendance.map(student => ({
-          //your code here
+  // your code here
 }));
-/* Hardest Challenge (Don't do this without completing harder challenges) */
 
-/* Write a function that solves the "every number eventually equals 4" puzzle. The output should be
-    an array of the path you took to make it equal four
-    ex/ [11, 6, 3, 5, 4], [19, 8, 5, 4] or [252, 18, 8, 5, 4]
-    For context: https://puzzling.stackexchange.com/questions/29137/every-number-eventually-equals-4 */
 
-// assuming num < 1,000,000. Pattern holds with higher numbers but just requires more checks
-// does not support leading zeros
+/* Hardest Challenge */
+
 const numberToWordsLength = (num) => {
   const words = {
     0: "zero", 1: "one", 2: "two", 3: "three", 4: "four",
@@ -109,5 +111,5 @@ const numberToWordsLength = (num) => {
 };
 
 const allPathsLeadToFour = (num) => {
-    //your code here
+  // your code here
 };
