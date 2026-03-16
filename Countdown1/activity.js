@@ -13,17 +13,23 @@ Using the following array of objects,
 
 // (1) Write an arrow function that adds a new entry to bookList
 const addBook = (newTitle, newAuthor) => {
-  // your code here
+  // create book
+  const book = { title: newTitle, author: newAuthor};
+  // add book to book list 
+  bookList.push(book);
+  return bookList;
 };
 
 // (2) Write an arrow function that removes a specific book from the bookList
 const removeBook = (removeTitle, removeAuthor) => {
-  // your code here
+  const newList = bookList.filter(book => !(book.title === removeTitle && book.author === removeAuthor))
+  return newList;
 };
 
-// (3) Write an arrow function that prints all book titles using .forEach()
+// (3) Write an arrow function that prints all book titles and authors using .forEach()
 const printBooks = () => {
   // your code here
+  bookList.forEach(book => console.log(`Title: ${book.title}, Author: ${book.author}`))
 };
 
 
@@ -31,7 +37,7 @@ const printBooks = () => {
 
 // (4) Write a one-line arrow function that takes in a number and returns
 // whether the number is positive or negative using a ternary operator
-const numberSign = (n) => null;//  remove null type and add your code here
+const numberSign = (n) => n >= 0 ? "positive" : "negative";
 
 
 /* (5) Write a switch statement for a 'day' variable that prints something
@@ -40,7 +46,23 @@ based off of what day of the week it is */
 let day = "Monday";
 
 switch(day){
-
+  case "Monday":
+    console.log("It's only the beginning");
+    break;
+  case "Tuesday":
+    console.log("Not again!");
+    break;  
+  case "Wednesday":
+    console.log("Halfway there!");
+    break;  
+  case "Thursday":
+    console.log("Almost done!");
+    break;  
+  case "Friday":
+    console.log("TGIF");
+    break;  
+  default:
+    console.log("When will this week ever end?!");
 }
 
 
@@ -48,7 +70,11 @@ switch(day){
 of every number from 1 up to that number */
 
 const sumUp = (n) => {
-  // your code here
+  let result = 0;
+  for(let i = 1; i <= n ; i++){
+    result += i;
+  }
+  return result;
 };
 
 
@@ -57,16 +83,27 @@ const sumUp = (n) => {
 // (7) Convert Celsius to Fahrenheit and return clothing advice
 
 const temperature = (celsius) => {
-  // your code here
+  const fahrenheit = celsius * 9/5 + 32;
+
+  if(fahrenheit <= 32){
+    return "wear a heavy coat";
+  }else if(fahrenheit  > 32 && fahrenheit <= 65){
+    return "wear a light coat";
+  }else if(fahrenheit  > 65 && fahrenheit <= 100){
+    return "wear a tanktop and shorts";
+  }else{
+    return "don't go outside";
+  }
 };
 
 
 /* (8) Print the amount of truthy values in an array using .forEach() */
 
 const truthy = (arr) => {
-  // your code here
+  let count = 0;
+  arr.forEach(n => { if (n) count++; });
+  return count;
 };
-
 
 /* (9) Using map(), return an array of objects that contain:
    - fullName
@@ -91,18 +128,19 @@ const gpaToLetter = (gpa) => {
 };
 
 const newArr = attendance.map(student => ({
-  // your code here
+  fullName: `${student.firstName} ${student.lastName}`,
+  averageGrade: gpaToLetter(student.gpa)
 }));
 
 
-/* Hardest Challenge (Don't do this without completing harder challenges) */
+/* Hardest Challenge (Don't do this without completing easier challenges) */
 
 /* Write a function that solves the "every number eventually equals 4" puzzle. The output should be
     an array of the path you took to make it equal four
-    ex/ [11, 6, 3, 5, 4], [19, 8, 5, 4] or [252, 18, 8, 5, 4]
+    ex/ [11, 6, 3, 5, 4], [19, 8, 5, 4]
     For context: https://puzzling.stackexchange.com/questions/29137/every-number-eventually-equals-4 */
 
-// assuming num < 1,000,000. Pattern holds with higher numbers but just requires more checks
+// assuming num < 21. Pattern holds with higher numbers but just requires more checks
 // does not support leading zeros
 const numberToWordsLength = (num) => {
   const words = {
@@ -118,5 +156,12 @@ const numberToWordsLength = (num) => {
 };
 
 const allPathsLeadToFour = (num) => {
-  // your code here
+  const nums = [num];
+
+  while (num !== 4) {
+    num = numberToWordsLength(num);
+    nums.push(num);
+  }
+
+  return nums;
 };
