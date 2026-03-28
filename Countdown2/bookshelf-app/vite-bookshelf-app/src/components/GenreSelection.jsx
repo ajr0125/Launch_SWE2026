@@ -1,6 +1,17 @@
+//Use destructuring when you know exactly what props you need
+//Use props when you want flexibility or clarity about the full object
+
+// const GenreSelection = (props) => {
+//   const { data } = props;
+
+//   return <div>{data.fiction.length}</div>;
+// };
+//^ what people usually write (destructure inside the function)
+
 import { useState } from "react";
 import "../styles/gen.css";
 
+// here we know what data looks like specifically because we wrote the data 
 export const GenreSelection = ({ data }) => {
 	console.log("data ---> ", data);
 
@@ -16,6 +27,7 @@ export const GenreSelection = ({ data }) => {
 		<div className="outer-box">
 			<h1>Online Bookstore</h1>
 
+			{/* buttons need to flip between hide and show*/}
 			<div>
 				{showFiction ? (
 					<button onClick={() => setShowFiction(!showFiction)}>Hide Fiction</button>
