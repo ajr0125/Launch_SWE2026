@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  padding: 16px;
+}
+
+.app-bar {
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+}
+
+.brand-label {
+  margin: 0 0 4px;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.site-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  text-transform: none;
+  color: #111;
+}
+
+.nav-button.active {
+  background: rgba(170, 59, 255, 0.15);
+}
+
+.route-content {
+  padding-top: 24px;
+}
+
+.page {
+  padding: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.page h2 {
+  margin-top: 0;
+}
+
+.page p,
+.page ul,
+.page address {
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.page ul {
+  padding-left: 20px;
+}

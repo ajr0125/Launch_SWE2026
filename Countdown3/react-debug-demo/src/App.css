@@ -1,0 +1,6 @@
+.movieCardContainer{
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 300px;
+  text-align: center;
+}
