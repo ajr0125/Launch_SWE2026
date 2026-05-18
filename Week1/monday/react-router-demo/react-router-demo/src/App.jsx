@@ -1,10 +1,7 @@
-import { NavLink, Routes, Route } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import AppBar from '@mui/material/AppBar'
 import Button from '@mui/material/Button'
 import './App.css'
-import Home from './pages/Home.jsx'
-import About from './pages/About.jsx'
-import Contact from './pages/Contact.jsx'
 
 function App() {
   return (
@@ -30,13 +27,9 @@ function App() {
         </div>
       </AppBar>
 
-      {/* URL will update when you click a link */}
+      {/* Child routes render here */}
       <main className="route-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Outlet />
       </main>
     </div>
   )
