@@ -1,0 +1,132 @@
+#root {
+  width: 100%;
+}
+
+.appShell {
+  min-height: 100vh;
+  padding: 32px 0 48px;
+  background:
+    linear-gradient(180deg, rgba(246, 248, 251, 0.96), rgba(237, 241, 246, 0.98)),
+    radial-gradient(circle at top left, rgba(115, 142, 171, 0.25), transparent 36%);
+  color: #18212f;
+}
+
+.searchPanel,
+.currentPanel,
+.forecastCard,
+.dailyCard,
+.newsCard {
+  border: 1px solid rgba(39, 58, 82, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 32px rgba(38, 52, 72, 0.08);
+}
+
+.searchPanel {
+  padding: 28px;
+}
+
+.pageTitle {
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.searchForm {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.results {
+  margin-top: 28px;
+}
+
+.currentPanel {
+  padding: 28px;
+}
+
+.conditionText {
+  text-transform: capitalize;
+}
+
+.currentIcon {
+  width: 112px;
+  height: 112px;
+}
+
+.currentTemp {
+  line-height: 1;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.sectionTitle {
+  margin-bottom: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.forecastRail {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(132px, 1fr);
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.forecastCard,
+.dailyCard {
+  min-height: 176px;
+}
+
+.forecastCard {
+  text-align: center;
+}
+
+.forecastIcon {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.dailyCard {
+  height: 100%;
+}
+
+.cardDivider {
+  margin: 14px 0;
+}
+
+.newsCard {
+  height: 100%;
+  overflow: hidden;
+}
+
+.newsImage {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .appShell {
+    padding: 18px 0 32px;
+  }
+
+  .searchPanel,
+  .currentPanel {
+    padding: 20px;
+  }
+
+  .searchForm {
+    grid-template-columns: 1fr;
+  }
+
+  .currentIcon {
+    width: 88px;
+    height: 88px;
+  }
+}
