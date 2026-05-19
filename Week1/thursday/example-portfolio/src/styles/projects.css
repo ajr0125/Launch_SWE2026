@@ -1,0 +1,73 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+  position: relative;
+}
+
+.project:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 1px;
+  background-color: #f0f0f0;
+}
+
+.project .content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.project .project-image {
+  height: 35vh;
+  width: 40%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.project .project-name {
+  margin-bottom: 25px;
+}
+
+.project .project-description {
+  margin-top: 0;
+}
+
+.project-info {
+  flex-basis: 55%;
+}
+
+.project-info .project-link {
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+.project-info .project-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .project .project-image {
+    object-fit: fill;
+  }
+}
+
+@media (max-width: 800px) {
+  .project {
+    margin: 0 auto;
+    padding: 25px 0;
+  }
+  .project .project-image {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .project .content {
+    flex-direction: column;
+  }
+}

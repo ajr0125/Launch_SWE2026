@@ -1,0 +1,30 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.introduction .heading {
+  font-size: 6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.introduction .subtext {
+  font-size: 3rem;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@media (max-width: 800px) {
+  .introduction .heading {
+    font-size: 3rem;
+  }
+
+  .introduction .subtext {
+    font-size: 1.5rem;
+  }
+}
