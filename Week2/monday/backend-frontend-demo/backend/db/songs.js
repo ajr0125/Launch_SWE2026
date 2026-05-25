@@ -1,7 +1,8 @@
-const { collection, doc, getDoc, getDocs, increment, updateDoc } = require('firebase/firestore');
-const db = require('../firebase');
+import { collection, doc, getDoc, getDocs, increment, updateDoc } from 'firebase/firestore';
 
-const fetchAllSongs = async () => {
+import db from '../firebase.js';
+
+export const fetchAllSongs = async () => {
   const querySnapshot = await getDocs(collection(db, 'songs'));
   return querySnapshot.docs.map((document) => ({
     id: document.id,
@@ -9,7 +10,7 @@ const fetchAllSongs = async () => {
   }));
 };
 
-const fetchSongById = async (id) => {
+export const fetchSongById = async (id) => {
   const songSnapshot = await getDoc(doc(db, 'songs', id));
 
   if (!songSnapshot.exists()) {
@@ -22,7 +23,7 @@ const fetchSongById = async (id) => {
   };
 };
 
-const updateSongLikes = async (id, amount) => {
+export const updateSongLikes = async (id, amount) => {
   const songRef = doc(db, 'songs', id);
   const songSnapshot = await getDoc(songRef);
 
@@ -35,10 +36,4 @@ const updateSongLikes = async (id, amount) => {
   });
 
   return fetchSongById(id);
-};
-
-module.exports = {
-  fetchAllSongs,
-  fetchSongById,
-  updateSongLikes,
 };

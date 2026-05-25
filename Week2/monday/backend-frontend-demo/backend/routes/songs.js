@@ -1,5 +1,6 @@
-const express = require('express');
-const { fetchAllSongs, fetchSongById, updateSongLikes } = require('../db/songs');
+import express from 'express';
+
+import { fetchAllSongs, fetchSongById, updateSongLikes } from '../db/songs.js';
 
 const router = express.Router();
 
@@ -54,4 +55,4 @@ router.patch('/:id/likes', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
