@@ -50,23 +50,11 @@ nav a.active {
   color: #555;
 }
 
-.login-form {
-  display: grid;
-  gap: 14px;
-}
-
-.login-form input,
 button.auth-button,
 .song-actions button,
 .song-actions a,
 .back-link {
   border-radius: 10px;
-}
-
-.login-form input {
-  padding: 12px 14px;
-  border: 1px solid #ccc;
-  font: inherit;
 }
 
 button.auth-button {
@@ -87,21 +75,6 @@ button.auth-button:hover {
 button.auth-button:disabled {
   opacity: 0.65;
   cursor: not-allowed;
-}
-
-.auth-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 18px 0;
-  color: #666;
-}
-
-.auth-divider::before,
-.auth-divider::after {
-  content: '';
-  flex: 1;
-  border-top: 1px solid #ddd;
 }
 
 .spotify-button {

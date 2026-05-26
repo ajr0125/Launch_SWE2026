@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { createContext, useCallback, useContext, useState } from 'react'
 
 export const AuthContext = createContext(null)
@@ -20,16 +19,6 @@ export function AuthProvider({ children }) {
     window.localStorage.setItem(savedUserKey, JSON.stringify(nextUser))
   }, [])
 
-  const login = async (username, password) => {
-    const response = await axios.post('http://localhost:5000/auth/login', {
-      username,
-      password,
-    })
-
-    saveUser(response.data)
-    return response.data
-  }
-
   const loginWithSpotify = () => {
     window.location.href = 'http://127.0.0.1:5000/auth/spotify'
   }
@@ -45,7 +34,6 @@ export function AuthProvider({ children }) {
 
   const value = {
     user,
-    login,
     loginWithSpotify,
     completeSpotifyLogin,
     logout,
