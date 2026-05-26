@@ -1,7 +1,20 @@
 nav {
   display: flex;
+  justify-content: space-between;
   gap: 12px;
   margin-bottom: 24px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 nav a {
@@ -15,6 +28,98 @@ nav a {
 nav a.active {
   background: black;
   color: white;
+}
+
+.login-page {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 28px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.login-page h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+}
+
+.login-page p {
+  margin: 0 0 24px;
+  color: #555;
+}
+
+.login-form {
+  display: grid;
+  gap: 14px;
+}
+
+.login-form input,
+button.auth-button,
+.song-actions button,
+.song-actions a,
+.back-link {
+  border-radius: 10px;
+}
+
+.login-form input {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  font: inherit;
+}
+
+button.auth-button {
+  border: none;
+  background: #1f5cff;
+  color: white;
+  font-weight: 700;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button.auth-button:hover {
+  background: #174ad4;
+  transform: translateY(-1px);
+}
+
+button.auth-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  color: #666;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #ddd;
+}
+
+.spotify-button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background: #1db954;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.spotify-button:hover {
+  background: #169c46;
+  transform: translateY(-1px);
 }
 
 .songs-page {
@@ -109,4 +214,17 @@ nav a.active {
 
 .song-detail-card h1 {
   margin: 0 0 8px;
+}
+
+.profile-page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 8px 20px 40px;
+}
+
+.profile-image {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
 }
