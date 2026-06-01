@@ -2,6 +2,8 @@ import { useState } from "react";
 // Library for making HTTP requests
 import axios from "axios";
 
+const baseURL = import.meta.env.VITE_BASE_URL || "http://localhost:5001";
+
 function App() {
   // Chatbot's frontend memory
   const [messages, setMessages] = useState([]);
@@ -23,7 +25,8 @@ function App() {
     try {
       // Send conversation to backend/OpenAI
       const response = await axios.post(
-        "http://localhost:5001/chat",
+        //"http://localhost:5001/chat",
+        `${baseURL}/chat`,
         {
           messages: updatedMessages,
         }
